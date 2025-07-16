@@ -1,0 +1,20 @@
+{
+    "subsid": "",
+    "resourceGroupName": "",
+    "networkManagerName": "",
+    "configName": "",
+    "applyOnNetworkIntentPolicyBasedServices":[],
+    "deleteExistingNSG": "False",
+    "networkGroupIds": [],
+    "ruleCollectionName": "",
+    "sourceAddressPrefixList": [],
+    "destinationAddressPrefixList": [],
+    "sourcePortList": [],
+    "destinationPortList": [],
+    "ruleName": "",
+    "protocol": "",
+    "direction": "",
+    "access": "",
+    "priority": "",
+    "regions": []
+}

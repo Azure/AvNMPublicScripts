@@ -1,0 +1,18 @@
+{
+    "subsid": "f70df20d-7c49-465b-a4a1-e2a682ca1ffd",
+    "resourceGroupName": "ankursood-rg",
+    "networkManagerName": "ankur-nm-slice1",
+    "configName": "testsecurityUserConfig1",
+    "networkGroupIds": ["/subscriptions/f70df20d-7c49-465b-a4a1-e2a682ca1ffd/resourceGroups/ankursood-rg/providers/Microsoft.Network/networkManagers/ankur-nm-slice1/networkGroups/ng-subnet"],
+    "ruleCollectionName": "rc1",
+    "sourceAddressPrefixList": [],
+    "destinationAddressPrefixList": [{"AddressPrefix":"10.0.0.1", "AddressPrefixType":"IPPrefix"}],
+    "sourcePortList": ["100"],
+    "destinationPortList": ["20", "21"],
+    "ruleName": "rule1",
+    "protocol": "TCP",
+    "direction": "Inbound",
+    "access": "Deny",
+    "priority": "33",
+    "regions": ["eastus2euap"]
+}

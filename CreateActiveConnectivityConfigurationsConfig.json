@@ -1,0 +1,13 @@
+{
+    "subsid": "",
+    "resourceGroupName": "",
+    "networkManagerName": "",
+    "configName": "",
+    "networkGroupIds": [],
+    "hubIds":[{"ResourceId": "", "ResourceType": "Microsoft.Network/virtualNetworks"}],
+    "connectivityTopology": "HubAndSpoke",
+    "deleteExistingPeering": "False",
+    "isGlobal": "False",
+    "connectivityCapability": {"ConnectedGroupPrivateEndpointsScale": "Standard", "ConnectedGroupAddressOverlap": "Disallowed", "PeeringEnforcement": "Unenforced"},
+    "regions": []
+}
