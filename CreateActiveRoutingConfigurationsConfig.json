@@ -1,0 +1,9 @@
+{
+    "subsid": "",
+    "resourceGroupName": "",
+    "networkManagerName": "",
+    "configName": "",
+    "ruleCollections":[{"networkGroupIds": [""], "ruleCollectionName": "","disableBgpRoutePropagation": "False"}],
+    "rules":[{"ruleName": "", "ruleCollectionsName": "", "destinationAddress": "", "type": "", "nextHopType":"", "nextHopAddress":""}],
+    "regions": []
+}
