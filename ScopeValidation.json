@@ -2,11 +2,10 @@
     "subsid": "",
     "resourceGroupName": "",
     "networkManagerName": "",
-    "subscriptions": [""],
-    "managementGroups": [""]
+    "subscriptions": [],
+    "managementGroups": []
+    "scopePath": "./scope.json",
+    "isDryRun": "false"
 }
-  
-  
-  
   
   

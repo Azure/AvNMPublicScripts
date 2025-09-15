@@ -3,18 +3,34 @@
 
     # Setup
     $configPath = '.\ScopeValidation.json'
-
+    
     try
     {
         $Configs = Get-Content -Path $configPath | ConvertFrom-Json  -AsHashtable -ErrorAction SilentlyContinue
         $subId = $configs["subsid"]
-        Write-Host "Subscription Id: " $SubId
+        Write-Host "Subscription Id: " $subId
         $rgname = $configs["resourceGroupName"]
         Write-Host "ResourceGroup Id: " $rgname
         $networkManagerName = $configs["networkManagerName"]
         Write-Host "NetworkManager Name: " $NetworkManagerName
-        $subscriptions = $configs["subscriptions"]
-        $managementGroups = $configs["managementGroups"]
+        $scopePath = $configs["scopePath"]
+        
+        if($scopePath.Length -ne 0)
+        {
+            Write-Host "Get Scope From ScopePath: " $scopePath
+            $updatedScope  = Get-Content -Path $scopePath | ConvertFrom-Json  -AsHashtable -ErrorAction SilentlyContinue
+            $subscriptions = $updatedScope["Subscriptions"]
+            $managementGroups = $updatedScope["ManagementGroups"]
+        }
+        else{
+            $subscriptions = $configs["subscriptions"]
+            $managementGroups = $configs["managementGroups"]
+        }
+
+        
+        
+        $isDryRun = $configs["isDryRun"]
+        Write-Host "IsDryRun: " $isDryRun
     }        
     catch
     {
@@ -164,7 +180,24 @@
                return
             }
         }
+
+
     }
     
-    Write-Host "Removed Scopes Do Not Contain Deployed Resources, Safe To Remove" -ForegroundColor Green
+    if($isDryRun -eq "False" || $isDryRun -eq "false")
+    {
+        # Update
+        return
+        $scope = New-AzNetworkManagerScope -Subscription $subscriptions -ManagementGroup $managementGroups
+        $networkManager.NetworkManagerScopes = $scope;
+        $newNetworkManager = Set-AzNetworkManager -InputObject $networkManager
+        Write-Host "Removed Scopes Do Not Contain Deployed Resources, Network Manager Scope is Updated" -ForegroundColor Green
+    }
+    else
+    {
+        Write-Host "Removed Scopes Do Not Contain Deployed Resources, Safe To Remove" -ForegroundColor Green
+    }
+
+    
+    
     
