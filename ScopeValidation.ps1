@@ -187,7 +187,6 @@
     if($isDryRun -eq "False" || $isDryRun -eq "false")
     {
         # Update
-        return
         $scope = New-AzNetworkManagerScope -Subscription $subscriptions -ManagementGroup $managementGroups
         $networkManager.NetworkManagerScopes = $scope;
         $newNetworkManager = Set-AzNetworkManager -InputObject $networkManager
