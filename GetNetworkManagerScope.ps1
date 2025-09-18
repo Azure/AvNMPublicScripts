@@ -2,7 +2,7 @@
     #// Licensed under the MIT license.
 
     # Setup
-    $configPath = '.\GetNetworkManagerScope.json'
+    $configPath = '.\ScopeValidation.json'
 
     try
     {
@@ -13,7 +13,7 @@
         Write-Host "ResourceGroup Id: " $rgname
         $networkManagerName = $configs["networkManagerName"]
         Write-Host "NetworkManager Name: " $NetworkManagerName
-        $outputPath = $configs["outputPath"]
+        $outputPath = $configs["scopePath"]
         Write-Host "OutputPath: " $outputPath
     }        
     catch
